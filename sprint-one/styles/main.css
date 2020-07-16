@@ -1,0 +1,187 @@
+@font-face {
+  font-family: "AvenirNextProLT";
+  src: url("/assets/fonts/AvenirNextProLT/Linotype - AvenirNextLTPro-Regular.ttf") format "truetype";
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "AvenirNextProLT";
+  src: url("/assets/fonts/AvenirNextProLT/Linotype - AvenirNextLTPro-Demi.ttf") format "truetype";
+  font-weight: demi bold;
+}
+
+@font-face {
+  font-family: "AvenirNextProLT";
+  src: url("/assets/fonts/AvenirNextProLT/Linotype - AvenirNextLTPro-Bold.ttf") format "truetype";
+  font-weight: bold;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+}
+
+*:before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+}
+
+*:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.body {
+  max-width: 1240px;
+  margin: 0 auto;
+  font-family: "AvenirNextLTPro";
+}
+
+/* Nav */
+.nav-logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 1rem;
+  padding-bottom: 1 rem;
+}
+
+.nav {
+  background-color: #323232;
+  padding: 0 2rem;
+}
+
+.main-nav {
+  font-size: 1rem;
+  color: #ffffff;
+  padding: 1rem;
+  font-family: "AvenirNextProLT" !important;
+  font-weight: normal;
+}
+
+.main-nav__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main-nav__item {
+  margin-right: 1rem;
+}
+
+.main-nav__current {
+  color: #ffffff;
+  padding-bottom: 0.8rem;
+  border-bottom: 4px solid #ffffff;
+}
+
+.main-nav__link:link {
+  color: #ffffff;
+}
+
+.main-nav__link:visited {
+  color: #ffffff;
+}
+
+.main-nav__link:hover {
+  color: #ffffff;
+}
+
+.main-nav__link:active {
+  color: #ffffff;
+}
+
+.main {
+  padding: 0 2rem;
+}
+
+/* Hero */
+.hero-container {
+  display: block;
+  background-image: url("/assets/images/hero-background.jpg");
+  background-size: 100%;
+  background-position: center;
+  height: 18rem;
+  padding: 0 3rem;
+}
+
+.hero-header__text {
+  color: #ffffff;
+  padding: 6rem 0;
+  font-family: "AvenirNextProLT" !important;
+  font-weight: bold;
+}
+
+/* Gallery */
+.gallery-container {
+  padding: 0.1rem;
+}
+
+.gallery {
+  width: 100%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+  .gallery {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .gallery {
+    max-width: 1350px;
+  }
+}
+
+.gallery__item {
+  width: 75%;
+}
+
+@media screen and (min-width: 768px) {
+  .gallery__item {
+    width: 33%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .gallery__item {
+    width: 25%;
+  }
+}
+/*# sourceMappingURL=main.css.map */

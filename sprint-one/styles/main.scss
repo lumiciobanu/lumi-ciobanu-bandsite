@@ -1,0 +1,149 @@
+//Imports
+@import "partials/variables";
+@import "partials/mixins";
+@import "partials/typography";
+
+@font-face {
+    font-family: "AvenirNextProLT";
+    src: url("/assets/fonts/AvenirNextProLT/Linotype - AvenirNextLTPro-Regular.ttf") format ("truetype");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "AvenirNextProLT";
+    src: url("/assets/fonts/AvenirNextProLT/Linotype - AvenirNextLTPro-Demi.ttf") format ("truetype");
+    font-weight: demi bold;
+}
+
+@font-face {
+    font-family: "AvenirNextProLT";
+    src: url("/assets/fonts/AvenirNextProLT/Linotype - AvenirNextLTPro-Bold.ttf") format ("truetype");
+    font-weight: bold;
+}
+
+* {
+    @include reset-margin-border-box;
+
+    &:before {
+        @include reset-margin-border-box;
+    }
+    &:after {
+        @include reset-margin-border-box;
+    }
+}
+
+ul,
+li {
+    @include reset-list;
+}
+
+a {
+    text-decoration: none;
+}
+
+.body {
+    max-width: 1240px;
+    margin: 0 auto;
+    font-family: "AvenirNextLTPro";
+}
+
+/* Nav */
+.nav-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1rem;
+    padding-bottom: 1 rem;
+}
+.nav {
+    background-color: $black;
+    // font-family: $font-family;
+    padding: 0 2rem;
+}
+
+.main-nav {
+    font-size: 1rem;
+    color: $white;
+    padding: 1rem;
+    font-family: "AvenirNextProLT" !important;
+    font-weight: normal;
+}
+.main-nav__list {
+    display: flex;
+}
+
+.main-nav__item {
+    margin-right: 1rem;
+}
+
+.main-nav__current {
+    color: $white;
+    padding-bottom: 0.8rem;
+    border-bottom: 4px solid $white;
+}
+.main-nav__link {
+    &:link {
+        color: $white;
+    }
+    &:visited {
+        color: $white;
+    }
+    &:hover {
+        color: $white;
+    }
+    &:active {
+        color: $white;
+    }
+}
+
+.main {
+    padding: 0 2rem;
+}
+/* Hero */
+.hero-container {
+    display: block;
+    background-image: url("/assets/images/hero-background.jpg");
+    background-size: 100%;
+    background-position: center;
+    height: 18rem;
+    padding: 0 3rem;
+}
+
+.hero-header__text {
+    color: $white;
+    padding: 6rem 0;
+    font-family: "AvenirNextProLT" !important;
+    font-weight: bold;
+}
+
+/* Gallery */
+.gallery-container {
+    padding: 0.1rem;
+}
+
+.gallery {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include tablet {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    @include desktop {
+        max-width: 1350px;
+    }
+
+    &__item {
+        width: 75%;
+        // font-size: $font-main-mobile;
+        @include tablet {
+            width: 33%;
+        }
+        @include desktop {
+            width: 25%;
+            // font-size: $font-main-desktop;
+        }
+    }
+}
