@@ -2,3 +2,22 @@
 
 // $font-family: "AvenirNextProLT";
 $base-font-size: 16px;
+
+
+@font-face {
+    font-family: "AvenirNextProLT";
+    src: url("/assets/fonts/AvenirNextProLT/avenirnextltpro-regular.otf");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "AvenirNextProLT";
+    src: url("/assets/fonts/AvenirNextProLT/avenirnextltpro-demi.otf");
+    font-weight: demi bold;
+}
+
+@font-face {
+    font-family: "AvenirNextProLT";
+    src: url("/assets/fonts/AvenirNextProLT/avenirnextltpro-bold.otf");
+    font-weight: bold;
+}
