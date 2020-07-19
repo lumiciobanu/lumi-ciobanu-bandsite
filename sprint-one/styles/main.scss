@@ -25,47 +25,62 @@ a {
     text-decoration: none;
 }
 
-.body {
-    // max-width: 1240px;
-    margin: 0 auto;
-}
-
 p {
     font-size: 0.813rem;
     line-height: 1.125rem;
-    font-weight: regular;
+    font-weight: normal;
+
+    @include tablet {
+        font-size: 0.875rem;
+        line-height: 1.375rem;
+    }
 }
 
 /* Nav */
+.nav {
+    background-color: $black;
+    padding: 1rem 0 0;
+    @include tablet {
+        display: flex;
+        align-items: center;
+    }
+
+    @include desktop {
+        @include add-padd-desktop;
+    }
+}
+
 .nav-logo {
     display: flex;
     justify-content: center;
     align-items: center;
     padding-top: 1rem;
-    padding-bottom: 1 rem;
-}
-.nav {
-    background-color: $black;
-    // font-family: $font-family;
-    padding: 0;
+    padding-bottom: 1rem;
+    @include tablet {
+        padding: 1rem 2rem;
+    }
 }
 
 .main-nav {
     font-size: 1rem;
     color: $white;
     padding-top: 1rem;
-    // padding-bottom: 1rem;
 }
 .main-nav__list {
     display: flex;
 }
 
 .main-nav__item {
-    // margin-right: 1rem;
     width: 50%;
     padding-right: 2rem;
     padding-left: 2rem;
     text-align: center;
+    @include tablet {
+        margin-left: 1rem;
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+        margin-right: 2rem;
+    }
 }
 
 .main-nav__current {
@@ -88,9 +103,6 @@ p {
     }
 }
 
-.main {
-    padding: 0 2rem;
-}
 /* Hero */
 .hero__container {
     display: block;
@@ -99,67 +111,107 @@ p {
     background-position: center;
     height: 18rem;
     padding: 0 2rem;
+
+    @include tablet {
+        height: 22rem;
+    }
+    @include desktop {
+        height: 28rem;
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem;
+        @include add-padd-desktop;
+    }
 }
 
 .hero__header {
-    color: $white;
-    padding: 6rem 0;
-    font-family: "AvenirNextProLT" !important;
-    font-weight: bold;
+    @include hero-header-mobile;
+
+    @include tablet {
+        @include hero-header-tablet;
+    }
 }
 
 /* About */
 
 .about__container {
     padding: 1rem 2rem;
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
 
     @include desktop {
-        padding-right: 3rem;
-        padding-left: 3rem;
-        }
+        @include add-padd-desktop;
+    }
 }
 
+.about__content {
+    @include desktop {
+        padding-left: 4rem;
+        padding-right: 4rem;
+        margin: 0 auto;
+    }
+}
 .about__header {
-    @include title;
-    
+    @include title-mobile;
+
+    @include tablet {
+        @include title-tablet;
+    }
 }
 
 .about__img {
-    width: 100%;
-    margin-bottom: 1rem;
+    min-width: 288px;
+    min-height: 145px;
+    margin-bottom: 2rem;
+    @include tablet {
+        max-width: 720px;
+        max-height: 362px;
+    }
+
+    @include desktop {
+        max-width: 896px;
+        max-height: 450px;
+    }
 }
 
 .about__quote {
-    font-size: 0.875rem;
-    line-height: 1.375rem;
-    margin-bottom: 1.5rem;
-    font-weight: 500;
+    @include subheader-mobile;
+    width: 90%;
+
+    @include tablet {
+        @include subheader-tablet;
+    }
+
+    @include desktop {
+        width: 80%;
+    }
     &--author {
-        font-weight: normal;
-        margin-bottom: 2rem;
+        font-size: 1rem;
+        line-height: 1.5rem;
+        font-weight: 500;
+        margin-bottom: 1.5rem;
     }
 }
 
 .about__subheader {
-    font-size: 0.875rem;
-    line-height: 1.375rem;
-    margin-bottom: 1rem;
+    @include subheader-mobile;
+    @include tablet {
+        @include subheader-tablet;
+    }
 }
 
 .about__text {
+    @include tablet {
+        @include flex-row;
+    }
+
     @include desktop {
-        display: flex;
-        flex-direction: row;
-        
+        width: 85%;
     }
 }
 .about__paragraph {
     margin-bottom: 1rem;
-    @include desktop {
-    width: 35%;
-    margin-right: 1rem;
+    @include tablet {
+        width: 45%;
+        margin-right: 1.5rem;
     }
 }
 
@@ -167,35 +219,49 @@ p {
 .gallery__container {
     padding: 1rem 2rem;
     background: $alabaster;
+
+    @include desktop {
+        @include add-padd-desktop;
+    }
 }
 
 .gallery__header {
-    @include title;
-    
+    @include title-mobile;
+
+    @include tablet {
+        @include title-tablet;
+    }
 }
 
 .gallery {
     width: 100%;
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
     align-items: center;
     @include tablet {
         flex-direction: row;
         flex-wrap: wrap;
     }
     @include desktop {
-        max-width: 1024px;
+        // max-width: 1024px;
     }
 
     &__item {
         width: 100%;
         margin-bottom: 1.5rem;
+
+        filter: grayscale(1);
         @include tablet {
-            width: 33%;
+            width: 29.9%;
+            margin-right: 1.5rem;
         }
         @include desktop {
-            width: 25%;
+            min-width: 344px;
+            min-height: 193px;
+        }
+
+        &:hover {
+            filter: grayscale(0);
         }
     }
 }
@@ -203,80 +269,105 @@ p {
 /* Footer */
 
 .footer__container {
+    // @include flex-column;
     background-color: $black;
-    padding: 1rem 2rem;
+    padding: 2rem 2rem;
+    @include desktop {
+        @include add-padd-desktop;
+    }
 }
 
 .footer__getintouch {
-    display: flex;
-    flex-direction: column;
-    
+    @include flex-column;
+    // width: 25%;
 
     @include tablet {
-        display: flex;
-        flex-direction: row;
-        flex-direction: center;
-        
+        @include flex-row;
     }
 }
 
-.footer__getsocial {
+.footer__social {
     display: flex;
-    flex-direction: column;
-    
+    justify-content: space-between;
+    padding: 1.5rem 0;
+    width: 25%;
+
+    @include tablet {
+        justify-content: center;
+    }
+}
+
+.footer__logo {
+    display: none;
 
     @include tablet {
         display: flex;
-        flex-direction: row;
-        flex-direction: center;
-        
     }
+    @include desktop {
+        width: 25%;
+        padding: 1.5rem;
+    }
+}
+
+.footer__icon {
+    padding: 0 1rem 0 0;
 }
 
 .footer__title {
-    @include title;
+    @include footer-title-mobile;
     color: $white;
+
+    @include tablet {
+        @include footer-title-tablet;
+    }
 }
 
 .footer__info {
-    display: flex;
-    flex-direction: column;
-    padding-top: 1rem;
+    @include flex-column;
     padding-bottom: 1rem;
 
     @include tablet {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+        @include flex-row;
+        justify-content: flex-start;
     }
 }
-.footer__contact {
-    font-size: 0.813rem;
-    line-height: 1.125rem;
-    font-weight: regular;
-    color: $white;
+
+.footer__text {
+    @include tablet {
+        width: 30%;
+        padding-right: 0.5rem;
+    }
+
+    @include desktop {
+        width: 25%;
+    }
 }
 
-/* This is DEMO responsive */
+.footer__contact {
+    @include footer-contact-mobile;
+    color: $white;
+    margin-bottom: 1rem;
 
-// .about {
+    @include tablet {
+        @include footer-contact-tablet;
+    }
+}
 
-//     width: 100%;
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
+.footer__link {
+    &:link {
+        color: $white;
+    }
+    &:visited {
+        color: $white;
+    }
+    &:hover {
+        color: $white;
+    }
+    &:active {
+        color: $white;
+    }
+}
 
-//     @include tablet {
-//         display: flex;
-//         flex-direction: row;
-//     }
-
-//     &__child {
-//         width: 100%;
-//         max-width: 450px;
-//         height: 100px;
-//         background-color: yellow;
-//         margin-bottom: 1rem;
-//         margin-right: 1rem;
-//     }
-// }
+.logo__hidden {
+    display: none;
+}
