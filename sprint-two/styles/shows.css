@@ -1,0 +1,105 @@
+@font-face {
+  font-family: "AvenirNextProLT";
+  src: url("/assets/fonts/AvenirNextProLT/avenirnextltpro-regular.otf");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "AvenirNextProLT";
+  src: url("/assets/fonts/AvenirNextProLT/avenirnextltpro-demi.otf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "AvenirNextProLT";
+  src: url("/assets/fonts/AvenirNextProLT/avenirnextltpro-bold.otf");
+  font-weight: bold;
+}
+
+/* Hero Shows */
+.hero__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-image: url("/assets/images/show-hero-background.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 40rem;
+  padding: 0 2rem;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media screen and (min-width: 1024px) {
+  .hero__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+.hero__subheader {
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+  color: #ffffff;
+  padding-top: 5rem;
+}
+
+.hero-container__right {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* About Shows */
+.shows__container {
+  padding: 1rem 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media screen and (min-width: 1024px) {
+  .shows__container {
+    padding-left: 10rem;
+    padding-right: 10rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    width: 100%;
+  }
+}
+
+.table {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.column-one {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+/*# sourceMappingURL=shows.css.map */

@@ -1,0 +1,57 @@
+//Imports
+@import "partials/variables";
+@import "partials/mixins";
+@import "partials/typography";
+
+
+/* Hero Shows */
+.hero__container {
+    display: flex;
+    background-image: url("/assets/images/show-hero-background.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 40rem;
+    padding: 0 2rem;
+    @include flex-column;
+
+    @include desktop {
+        @include flex-row;
+    }
+}
+
+.hero__subheader {
+    @include subheader-mobile;
+    color: $white;
+    padding-top: 5rem;
+}
+
+.hero-container__right {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+
+/* About Shows */
+.shows__container {
+   
+    padding: 1rem 2rem;
+    @include flex-column;
+
+    @include desktop {
+        @include add-padd-desktop;
+        @include flex-row;
+        width: 100%;
+    }
+}
+
+.table {
+    display: flex;
+}
+
+.column-one {
+    display: flex;
+    @include flex-row;
+}
+
+
+  
