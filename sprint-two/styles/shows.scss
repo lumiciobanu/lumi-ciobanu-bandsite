@@ -3,9 +3,8 @@
 @import "partials/mixins";
 @import "partials/typography";
 
-
 /* Hero Shows */
-.hero__container {
+.hero-container {
     display: flex;
     background-image: url("/assets/images/show-hero-background.jpg");
     background-size: cover;
@@ -16,24 +15,58 @@
 
     @include desktop {
         @include flex-row;
+        @include desktop {
+           @include add-padd-desktop;
+        
+    }
+&__left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    
+    }
+}
+
+&__right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+}
+.hero__header {
+    @include hero-header-mobile;
+
+    @include tablet {
+        @include hero-header-tablet;
+        padding: 0;
+    }
+
+    &--shows {
+        @include hero-header-mobile;
+        padding: 0;
+
+        @include tablet {
+            @include hero-header-tablet;
+            padding: 0;
+        }
     }
 }
 
 .hero__subheader {
     @include subheader-mobile;
     color: $white;
-    padding-top: 5rem;
-}
-
-.hero-container__right {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-}
-
-
-/* About Shows */
-.shows__container {
    
+}
+
+.hero-soundcloud {
+    padding: 0 3rem;
+}
+
+/* Shows */
+.shows__container {
     padding: 1rem 2rem;
     @include flex-column;
 
@@ -43,15 +76,82 @@
         width: 100%;
     }
 }
-
-.table {
+.shows__title {
+    @include desktop {
+        padding-top: 0.5rem;
+        margin-right: 2rem;
+    }
+}
+.show__row {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid $mercury;
+}
+.shows__table {
     display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
-.column-one {
-    display: flex;
-    @include flex-row;
+.shows__item {
+    @include tablet {
+        display: flex;
+        flex-direction: row;
+    }
+}
+.shows__label {
+@include label-text;
+&--hidden {
+    @include label-text;
+    @include tablet {
+        display: none;
+    }
+}
 }
 
+.column {
+    width: 75%;
+    // padding-left: 3rem;
+    // padding-right: 3rem;
+}
 
-  
+// .shows__item {
+//     padding-top: 0.5rem;
+//     padding-bottom: 0.5rem;
+// }
+
+/* Var 2 - List */
+// .shows__row {
+//     @include flex-column;
+//     @include tablet {
+//         @include flex-row;
+//         justify-content: flex-start;
+        
+//     }
+
+//     &--header {
+//         @include flex-column;
+//         display: none;
+//         @include tablet {
+//             @include flex-row;
+//             justify-content: flex-start;
+//             @include label-text;
+//         }
+//     }
+// }
+
+// .shows__item {
+//     width: 100%;
+// }
+
+/* End of Var 2 - List */
+.button {
+    background-color: $black;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    text-transform: uppercase;
+}

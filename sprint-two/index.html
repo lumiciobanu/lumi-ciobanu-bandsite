@@ -7,6 +7,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/bio.css">
 
 </head>
 
@@ -107,19 +108,26 @@
 
             <section class="comments__container">
 
-                <h2 class="Comments__header">Join the Conversation</h2>
+                <h2 class="comments__header">Join the Conversation</h2>
 
-                <div class="comments_form">
-                    <form>
-                        <label for="fname">Name</label>
-                        <input type="text" id="fname" name="firstname" placeholder="Your name">
-                        <label for="fname">Comment</label>
-                        <textarea id="subject" name="subject" placeholder="Add a new comment"
-                            style="height:200px"></textarea>
-
-                        <input type="submit" value="Submit">
+                
+                <div class="comments__div">
+                    <div>
+                        <img class="comments__image" src="/assets/images/Mohan-muruge.jpg" alt="">
+                    </div>
+                    <div class="comments__form">
+                    <form id="form">
+                        <label class="comments__label" for="name">Name</label>
+                        <input type="text" id="name" name="yourname" placeholder="Your name">
+                        <label class="comments__label" name="yourcomment" for="comment">Comment</label>
+                        <textarea class="comments__textarea" id="subject" name="subject"
+                            placeholder="Add a new comment"></textarea>
+                        <div class="comments__submit">
+                            <input class="button" type="submit" value="Comment">
+                        </div>
 
                     </form>
+                </div>
 
                 </div>
             </section>
@@ -188,7 +196,7 @@
 
     </main>
 
-    <script src="" async defer></script>
+    <script src="/scripts/script.js" async defer></script>
     </div>
 </body>
 

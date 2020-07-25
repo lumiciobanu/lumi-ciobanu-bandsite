@@ -104,3 +104,12 @@
   font-size: 0.875rem;
   line-height: 1.25rem;
 } 
+
+@mixin label-text {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  color: $silver;
+  text-transform: uppercase;
+}
+
+
