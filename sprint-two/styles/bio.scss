@@ -5,7 +5,8 @@
 
 /* Hero Biography */
 .hero__container {
-    display: block;
+    @include flex-column;
+    justify-content: center;
     background-image: url("/assets/images/hero-background.jpg");
     background-size: cover;
     background-position: center;
