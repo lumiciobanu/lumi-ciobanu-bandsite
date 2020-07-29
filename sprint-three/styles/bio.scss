@@ -1,0 +1,278 @@
+//Imports
+@import "partials/variables";
+@import "partials/mixins";
+@import "partials/typography";
+
+/* Hero Biography */
+.hero__container {
+    @include flex-column;
+    justify-content: center;
+    background-image: url("/assets/images/hero-background.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 18rem;
+    padding: 0 2rem;
+
+    @include tablet {
+        height: 22rem;
+    }
+    @include desktop {
+        height: 28rem;
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem;
+        @include add-padd-desktop;
+    }
+}
+
+.hero__header {
+    @include hero-header-mobile;
+
+    @include tablet {
+        @include hero-header-tablet;
+    }
+
+    &--shows {
+        @include hero-header-mobile;
+        padding: 0;
+
+        @include tablet {
+            @include hero-header-tablet;
+            padding: 0;
+        }
+    }
+}
+
+/* About */
+
+.about__container {
+    padding: 1rem 2rem;
+    @include flex-column;
+
+    @include desktop {
+        @include add-padd-desktop;
+    }
+}
+
+.about__content {
+    @include desktop {
+        padding-left: 4rem;
+        padding-right: 4rem;
+        margin: 0 auto;
+    }
+}
+.about__header {
+    @include title-mobile;
+
+    @include tablet {
+        @include title-tablet;
+    }
+}
+
+.about__img {
+    min-width: 288px;
+    min-height: 145px;
+    margin-bottom: 2rem;
+    @include tablet {
+        max-width: 720px;
+        max-height: 362px;
+    }
+
+    @include desktop {
+        max-width: 896px;
+        max-height: 450px;
+    }
+}
+
+.about__quote {
+    @include subheader-mobile;
+    width: 90%;
+
+    @include tablet {
+        @include subheader-tablet;
+    }
+
+    @include desktop {
+        width: 80%;
+    }
+    &--author {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        font-weight: 500;
+        margin-bottom: 1.5rem;
+    }
+}
+
+.about__subheader {
+    @include subheader-mobile;
+    @include tablet {
+        @include subheader-tablet;
+    }
+}
+
+.about__text {
+    @include tablet {
+        @include flex-row;
+    }
+
+    @include desktop {
+        width: 85%;
+    }
+}
+.about__paragraph {
+    margin-bottom: 1rem;
+    @include tablet {
+        width: 45%;
+        margin-right: 1.5rem;
+    }
+}
+
+/* Gallery */
+.gallery__container {
+    padding: 1rem 2rem;
+    background: $alabaster;
+
+    @include desktop {
+        @include add-padd-desktop;
+    }
+}
+
+.gallery__header {
+    @include title-mobile;
+
+    @include tablet {
+        @include title-tablet;
+    }
+}
+
+.gallery {
+    width: 100%;
+    margin: 0 auto;
+    @include flex-column;
+    align-items: center;
+    @include tablet {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    @include desktop {
+        // max-width: 1024px;
+    }
+
+    &__item {
+        width: 100%;
+        margin-bottom: 1.5rem;
+
+        filter: grayscale(1);
+        @include tablet {
+            width: 29.9%;
+            margin-right: 1.5rem;
+        }
+        @include desktop {
+            min-width: 344px;
+            min-height: 193px;
+        }
+
+        &:hover {
+            filter: grayscale(0);
+        }
+    }
+}
+
+/*Comments */
+.comments__container {
+    padding: 2rem 2rem;
+    @include flex-column;
+
+    @include desktop {
+        @include add-padd-desktop;
+    }
+}
+
+.comments__container {
+    padding-top: 2rem;
+    @include desktop {
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+.comments__div {
+    display: flex;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid $mercury;
+    @include tablet {
+        margin-right: 3rem;
+        margin-left: 3rem;
+    }
+}
+
+.comments__image {
+    width: 5rem;
+    border-radius: 50px;
+    margin-top: 1rem;
+    margin-right: 1rem;
+}
+.comments__submit {
+    text-align: right;
+}
+.comments__label {
+    @include label-text;
+}
+
+.comments__textarea {
+    height: 100px;
+}
+
+input[type="text"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid $silver;
+    border-radius: 5px;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    right: 0;
+}
+
+input[type="submit"] {
+    background-color: $black;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+input[type="submit"]:hover {
+    background-color: $black;
+}
+
+.comments__new {
+    display: flex;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid $mercury;
+    @include tablet {
+        margin-right: 3rem;
+        margin-left: 3rem;
+    }
+}
+
+.comments__header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.comments__name {
+    font-weight: 500;
+    margin-right: 1rem;
+}
+
+.comments__date {
+    margin-top: 0.2rem;
+    @include label-text;
+}

@@ -1,0 +1,115 @@
+@mixin tablet {
+  @media screen and (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: $desktop-breakpoint) {
+    @content;
+  }
+}
+
+@mixin reset-margin-border-box {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin add-padd-desktop {
+  padding-left: 10rem;
+  padding-right: 10rem;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+// Typography mixins 
+
+//Note for TA - This info is missing in instructions 
+@mixin hero-header-mobile {
+  font-size: 2.2rem;
+  line-height: 2.8rem;
+  color: $white;
+  // padding: 6rem 0;
+  font-weight: bold;
+}
+// End of Note for TA 
+
+@mixin hero-header-tablet {
+  font-size: 3.75rem;
+  line-height: 4.25rem;
+  // Note for TA: Mockup line-height has higher size than Typography specs
+  color: $white;
+  // padding: 7rem 0;
+  font-weight: bold;
+}
+
+@mixin title-mobile {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+@mixin title-tablet {
+  font-size: 2.25rem;
+  line-height: 2.75rem;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+// Note for TA - This info is missing in instructions 
+@mixin subheader-mobile {
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+// End of Note for TA 
+
+@mixin subheader-tablet {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+@mixin footer-title-mobile {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  padding-top: 1rem;
+ }
+@mixin footer-title-tablet {
+  font-size: 2.25rem;
+  line-height: 2.75rem;
+  padding-top: 1rem;
+}
+
+@mixin footer-contact-mobile {
+  font-size: 0.813rem;
+  line-height: 1.125;
+}
+
+@mixin footer-contact-tablet {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+} 
+
+@mixin label-text {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  color: $silver;
+  text-transform: uppercase;
+}
+
+
