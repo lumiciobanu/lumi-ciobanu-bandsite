@@ -267,7 +267,7 @@
   font-weight: 500;
 }
 
-.button {
+.show__button {
   background-color: #323232;
   color: #ffffff;
   padding: 12px 20px;
@@ -279,7 +279,7 @@
 }
 
 @media screen and (min-width: 768px) {
-  .button {
+  .show__button {
     min-width: 10rem;
   }
 }
