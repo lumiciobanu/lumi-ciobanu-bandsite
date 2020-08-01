@@ -21,7 +21,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-image: url("/assets/images/show-hero-background.jpg");
+  background-image: url("../assets/images/show-hero-background.jpg");
   background-size: cover;
   background-position: center;
   height: 40rem;
@@ -125,15 +125,19 @@
   color: #ffffff;
 }
 
+.hero__iframe {
+  width: 17.5rem;
+}
+
 @media screen and (min-width: 768px) {
-  .hero__soundcloud {
-    width: 70%;
+  .hero__iframe {
+    width: 30rem;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  .hero__soundcloud {
-    width: 100%;
+  .hero__iframe {
+    width: 22rem;
   }
 }
 
@@ -241,6 +245,13 @@
   text-align: left;
 }
 
+@media screen and (min-width: 1200px) {
+  .shows__label {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .shows__label--mobile {
     display: none;
@@ -260,6 +271,13 @@
     margin-bottom: 0;
     width: 100%;
     text-align: left;
+  }
+}
+
+@media screen and (min-width: 768px) and (min-width: 1200px) {
+  .show__info {
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
 }
 

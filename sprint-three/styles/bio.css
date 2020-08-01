@@ -28,11 +28,13 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-image: url("/assets/images/hero-background.jpg");
+  background-image: url("../assets/images/hero-background.jpg");
   background-size: cover;
   background-position: center;
   height: 18rem;
   padding: 0 2rem;
+  position: relative;
+  z-index: 1;
 }
 
 @media screen and (min-width: 768px) {
@@ -51,7 +53,19 @@
   }
 }
 
+.hero__container:before {
+  content: "";
+  display: block;
+  height: 70%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(50, 50, 50, 0.5);
+}
+
 .hero__header {
+  z-index: inherit;
   font-size: 2.2rem;
   line-height: 2.8rem;
   color: #ffffff;
@@ -129,22 +143,22 @@
 }
 
 .about__img {
-  min-width: 288px;
-  min-height: 145px;
+  width: 18rem;
+  min-width: 100%;
   margin-bottom: 2rem;
 }
 
 @media screen and (min-width: 768px) {
   .about__img {
-    max-width: 720px;
-    max-height: 362px;
+    width: 45rem;
+    min-width: 100%;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .about__img {
-    max-width: 896px;
-    max-height: 450px;
+    width: 56rem;
+    min-width: 100%;
   }
 }
 
@@ -248,7 +262,7 @@
   }
 }
 
-.gallery {
+.gallery__block {
   width: 100%;
   margin: 0 auto;
   display: -webkit-box;
@@ -264,7 +278,7 @@
 }
 
 @media screen and (min-width: 768px) {
-  .gallery {
+  .gallery__block {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -319,14 +333,19 @@
   }
 }
 
-.comments__container {
-  padding-top: 2rem;
+.comments__title {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
 }
 
-@media screen and (min-width: 1200px) {
-  .comments__container {
-    width: 80%;
-    margin: 0 auto;
+@media screen and (min-width: 768px) {
+  .comments__title {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
   }
 }
 
@@ -346,7 +365,8 @@
 }
 
 .comments__image {
-  width: 5rem;
+  width: 4rem;
+  height: 4rem;
   border-radius: 50px;
   margin-top: 1rem;
   margin-right: 1rem;

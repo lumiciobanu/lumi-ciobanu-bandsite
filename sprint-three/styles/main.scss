@@ -16,12 +16,18 @@
     }
 }
 
-ul,
-li {
+// ul,
+// li {
+//     @include reset-list;
+// }
+
+.main-nav__list,
+.main-nav__item {
     @include reset-list;
 }
 
-a {
+.main-nav__link,
+.footer__link {
     text-decoration: none;
 }
 

@@ -6,7 +6,7 @@
 /* Hero Shows */
 .hero-container {
     display: flex;
-    background-image: url("/assets/images/show-hero-background.jpg");
+    background-image: url("../assets/images/show-hero-background.jpg");
     background-size: cover;
     background-position: center;
     height: 40rem;
@@ -20,6 +20,9 @@
         }
     }
 }
+
+
+
 
 .hero__left {
     display: flex;
@@ -63,14 +66,17 @@
     color: $white;
 }
 
-.hero__soundcloud {
+.hero__iframe {
+    width: 17.5rem;
+
     @include tablet {
-        width: 70%;
+        width: 30rem;
     }
 
     @include desktop {
-        width: 100%;
+        width: 22rem;
     }
+
 }
 
 /* Shows */
@@ -102,6 +108,7 @@
         justify-content: space-around;
         align-items: center;
     }
+    
     &--label {
         display: none;
                 
@@ -124,6 +131,11 @@
     @include label-text;
     width: 100%;
     text-align: left;
+    @include desktop {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
     &--mobile {
         @include tablet {
             display: none;
@@ -137,11 +149,16 @@
 
 .show__info {
     margin-bottom: 1rem;
+    
     @include tablet {
     margin-bottom: 0;
-        width: 100%;
+    width: 100%;
     text-align: left;
-    
+    @include desktop {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    }
+
     }
     &--date {
         font-weight: 500;
