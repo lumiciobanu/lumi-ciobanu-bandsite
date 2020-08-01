@@ -1,24 +1,23 @@
 
-// // Note to TA: There are a few errors I didn't know how to fix. I need more help to understand how to finish this 2 requierments
 
 
 /* Shows Table Tickets */
-let showList = [
-    {
-        dates: "Mon Dec 17 2018",
-        venue: "Ronald Lane",
-        location: "San Francisco, CA",
+// let showList = [
+//     {
+//         dates: "Mon Dec 17 2018",
+//         venue: "Ronald Lane",
+//         location: "San Francisco, CA",
         
-    },
+//     },
 
-    {
-        dates: "Tue Jul 18 2019",
-        venue: "Pier 3 East",
-        location: "San Francisco, CA",
+//     {
+//         dates: "Tue Jul 18 2019",
+//         venue: "Pier 3 East",
+//         location: "San Francisco, CA",
         
-    },
+//     },
 
-]
+// ]
 
 
 let ticketTable = document.querySelector('.shows__table');
@@ -54,7 +53,7 @@ rowLabel.appendChild(itemLabelLocation)
 rowLabel.appendChild(itemLabelButton)
 
 
-
+function showCreate(showList) { 
  for (var i = 0; i < showList.length; i++) {
    /* Second Row */
 let Row = document.createElement('div');
@@ -68,7 +67,7 @@ itemLabelRow.innerText = "Dates";
 let showInfo = document.createElement('p');
 showInfo.classList.add('show__info')
 showInfo.classList.add('show__info--date')
-showInfo.innerText = showList[i].dates ;
+showInfo.innerText = showList[i].date ;
 
 let itemLabelRowVenue = document.createElement('p');
 itemLabelRowVenue.classList.add('shows__label');
@@ -77,7 +76,7 @@ itemLabelRowVenue.innerText = "Venue";
 
 let showInfoVenue = document.createElement('p');
 showInfoVenue.classList.add('show__info')
-showInfoVenue.innerText = showList[i].venue ;
+showInfoVenue.innerText = showList[i].place ;
 
 let itemLabelRowLocation = document.createElement('p');
 itemLabelRowLocation.classList.add('shows__label');
@@ -107,8 +106,24 @@ Row.appendChild(showInfoButton);
 showInfoButton.appendChild(ticketButton);
 
  }
+}
 
 
+ getShows = () => {
+    axios.get("https://project-1-api.herokuapp.com/showdates?api_key=5fe5aa5f-8066-497d-93b9-6fa22bdf1301")
+        .then(results => {
+            let shows = results.data
+            console.log(shows)
+      
+           showCreate(shows)              
+
+                    
+        })
+        
+        .catch(err => console.log(err))
+};
+
+getShows();
 
 
 
